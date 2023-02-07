@@ -1,0 +1,21 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "The best way to watch videos.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbsdnwjd96/wetube-reloaded.git"
+  },
+  "author": "Sally_Yun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbsdnwjd96/wetube-reloaded/issues"
+  },
+  "scripts": {
+    "win": "node index.js"
+  },
+  "homepage": "https://github.com/dbsdnwjd96/wetube-reloaded#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
