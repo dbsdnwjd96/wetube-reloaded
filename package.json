@@ -12,10 +12,16 @@
     "url": "https://github.com/dbsdnwjd96/wetube-reloaded/issues"
   },
   "scripts": {
-    "win": "node index.js"
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "homepage": "https://github.com/dbsdnwjd96/wetube-reloaded#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.20"
   }
 }
