@@ -1,21 +1,27 @@
 import express, { application } from "express";
+import morgan from "morgan";
 
 /* 1. Make express application */
 const PORT = 4000;
 const app = express();
+const logger = morgan("dev");
 
-/* 누군가가 어떤 Route로(home으로 Get request를 보낸다면) */
-const handleHome = (req, res) => {
+// const routerLogger = (req, res, next) => {
+//     console.log(`"PATH", ${req.path}`);
+//     next();
+// }
+// const methodlogger = (req, res, next) => {
+//     console.log(`"METHOD", ${req.method}`);
+//     next();
+
+// }
+const handleHome = (req, res, next) => {
+    console.log("I'll respond.")
     return res.send("hi");
 }
-
-const handleLogin = (req, res) => {
-    return res.send("<h1>Login Here</h1>");
-}
-
+// app.use(methodlogger, routerLogger);
+app.use(logger);
 app.get("/", handleHome);
-//handleHome({Request Object...}, {Response Object...})
-app.get("/login", handleLogin)
 
 const handleListening = () =>
     console.log(`Server listening on http://localhost:${PORT} 🚀`);
