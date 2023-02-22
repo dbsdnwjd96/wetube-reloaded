@@ -1,6 +1,6 @@
 import express from "express";
 import morgan from "morgan";
-import golbal from "./routers/golbalRouter";
+import global from "./routers/globalRouter";
 import user from "./routers/userRouter";
 import video from "./routers/videoRouter";
 
@@ -12,8 +12,12 @@ const app = express();
 const logger = morgan("dev");
 app.use(logger);
 
+/* 3. Make Template */
+app.set("view engine", "pug");
+app.set('views', process.cwd() + "/src/views");
+
 /* 2. Make Router */
-app.use("/", golbal);
+app.use("/", global);
 app.use("/users", user);
 app.use("/videos", video);
 
